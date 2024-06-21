@@ -44,7 +44,9 @@ Before you begin, ensure you have the following installed on your computer:
     - Windows: Shift + right-click in the folder and select "Open PowerShell window here" or "Open Command window here".
     - Mac: Right-click in the folder and select "New Terminal at Folder".
 3. Install the backend dependencies:
+    ```
     npm install
+    ```
 4. Create a .env file in the backend directory with the following content:
     touch .env
 
@@ -76,9 +78,13 @@ Before you begin, ensure you have the following installed on your computer:
 ### Step 1: Start the Backend Server
 
 1. Open a terminal and navigate to the backend directory:
+    ```
     cd backend
+    ```
 2. Start the server:
+    ```
     npm start
+    ```
 3. You should see a message saying Server running on port 5000 and MongoDB connected.
 
 ### Step 2: Start the Frontend Development Server
@@ -97,16 +103,16 @@ Before you begin, ensure you have the following installed on your computer:
 
 - MongoDB Connection Issues:
 
-    . Ensure MongoDB is running if using a local instance.
-    . Double-check the MongoDB connection string in the .env file.
+    - Ensure MongoDB is running if using a local instance.
+    - Double-check the MongoDB connection string in the .env file.
 
 - Port Conflicts:
 
-    . Make sure no other application is using ports 5000 (backend) and 3000 (frontend).
+    - Make sure no other application is using ports 5000 (backend) and 3000 (frontend).
 
 - Dependency Issues:
 
-    . If you encounter issues with installing dependencies, try deleting the node_modules folder and package-lock.json file, then run npm install again.
+    - If you encounter issues with installing dependencies, try deleting the node_modules folder and package-lock.json file, then run npm install again.
 
 ## Contact
 If you encounter any issues or have questions, feel free to reach out:
