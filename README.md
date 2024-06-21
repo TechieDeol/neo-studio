@@ -55,8 +55,10 @@ Before you begin, ensure you have the following installed on your computer:
         ```
 
     Replace your_mongo_connection_string with your MongoDB connection string. For example, for a local MongoDB setup:
+        ```
         MONGO_URI=mongodb://localhost:27017/neostudio
         PORT=5000
+        ```
 
 ### Step 3: Set Up the Frontend
 
@@ -65,7 +67,9 @@ Before you begin, ensure you have the following installed on your computer:
     - Windows: Shift + right-click in the folder and select "Open PowerShell window here" or "Open Command window here".
     - Mac: Right-click in the folder and select "New Terminal at Folder".
 3. Install the frontend dependencies:
+    ```
     npm install
+    ```
 
 ## Running the Project
 
@@ -80,9 +84,13 @@ Before you begin, ensure you have the following installed on your computer:
 ### Step 2: Start the Frontend Development Server
 1. Open a new terminal window/tab.
 2. Navigate to the frontend directory:
+    ```
     cd frontend
+    ```
 3. Start the React development server:
+    ```
     npm start
+    ```
 4. Your default web browser should open automatically with the React app running at http://localhost:3000.
 
 ## Troubleshooting
