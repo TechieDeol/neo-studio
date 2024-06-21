@@ -48,9 +48,11 @@ Before you begin, ensure you have the following installed on your computer:
 4. Create a .env file in the backend directory with the following content:
     touch .env
 
-    Open the .env file and add:
+    - Open the .env file and add:
+        ```
         MONGO_URI=your_mongo_connection_string
         PORT=5000
+        ```
 
     Replace your_mongo_connection_string with your MongoDB connection string. For example, for a local MongoDB setup:
         MONGO_URI=mongodb://localhost:27017/neostudio
