@@ -117,9 +117,9 @@ Before you begin, ensure you have the following installed on your computer:
 ## Contact
 If you encounter any issues or have questions, feel free to reach out:
 
-Sumandeep Kaur Deol
-Email: sumandeol.dev@gmail.com
-GitHub: TechieDeol
-Happy coding!
+- Sumandeep Kaur Deol
+- Email: sumandeol.dev@gmail.com
+- GitHub: TechieDeol
+- Happy coding!
 
 
