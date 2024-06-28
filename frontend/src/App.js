@@ -1,26 +1,18 @@
-import React from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import HomePage from './pages/HomePage';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import React from "react";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import HomePage from "./pages/HomePage/HomePage";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import "./App.css";
 
 const theme = createTheme({
-  typography: {
-    fontFamily: [
-      'Poppins',
-      'sans-serif'
-    ].join(','),
-  },
   palette: {
     primary: {
-      main: '#333996',
+      main: "#000000",
     },
     secondary: {
-      main: '#f83245',
-    },
-    background: {
-      default: '#f4f5fd',
+      main: "#ff00ff",
     },
   },
 });
