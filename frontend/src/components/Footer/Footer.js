@@ -1,8 +1,24 @@
-import React from "react";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import React, { useState } from "react";
 import "../Footer/Footer.css";
+import { subscribe } from "../../api/subscription";
 
 function Footer() {
+  const [email, setEmail] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    try {
+      await subscribe(email);
+      setSuccessMessage("Thank you for subscribing!");
+      setErrorMessage("");
+    } catch (error) {
+      setErrorMessage("Oops! Something went wrong while submitting the form.");
+      setSuccessMessage("");
+    }
+  };
+
   return (
     <>
       <div className="section footer-section">
@@ -21,6 +37,7 @@ function Footer() {
                       name="subscriptionForm"
                       aria-label="Subscription Form"
                       method="get"
+                      onSubmit={handleSubscribe}
                     >
                       <div className="form-wrapper">
                         <input
@@ -30,6 +47,8 @@ function Footer() {
                           maxLength="256"
                           required
                           placeholder="Your email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
                         />
                         <input
                           className="subscription-button"
@@ -44,9 +63,7 @@ function Footer() {
                       role="region"
                       tabIndex="-1"
                     >
-                      <div className="text-medium">
-                        Thank you for subscribing!
-                      </div>
+                      <div className="text-medium">{successMessage}</div>
                     </div>
                     <div
                       className="error-message"
@@ -54,9 +71,7 @@ function Footer() {
                       role="region"
                       tabIndex="-1"
                     >
-                      <div className="text-small">
-                        Oops! Something went wrong while submitting the form.
-                      </div>
+                      <div className="text-small">{errorMessage}</div>
                     </div>
                   </div>
                 </div>
@@ -67,6 +82,7 @@ function Footer() {
                     className="footer-contact-link mb-16"
                     href="https://www.google.com/maps/place/Prague,+Czechia/@50.0597507,14.3832244,12z/data=!3m1!4b1!4m6!3m5!1s0x470b939c0970798b:0x400af0f66164090!8m2!3d50.0755381!4d14.4378005!16zL20vMDV5d2c?entry=ttu"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     NEO STUDIO
                     <br style={{ boxSizing: "border-box" }} />
@@ -87,6 +103,7 @@ function Footer() {
                       className="social-link"
                       href="https://www.linkedin.com/"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <img
                         className="social-icon"
@@ -98,6 +115,7 @@ function Footer() {
                       className="social-link"
                       href="https://www.instagram.com/"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <img
                         className="social-icon"
@@ -109,6 +127,7 @@ function Footer() {
                       className="social-link"
                       href="https://twitter.com/"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <img
                         className="social-icon"
@@ -120,6 +139,7 @@ function Footer() {
                       className="social-link"
                       href="https://www.youtube.com/"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <img
                         className="social-icon"
@@ -129,12 +149,7 @@ function Footer() {
                     </a>
                   </div>
                 </div>
-                <div
-                  className="footer-column-wrapper"
-                  style={{
-                    gridArea: "1 / 12 / 2 / 13",
-                  }}
-                >
+                <div className="footer-column-wrapper">
                   <div className="text-small bold mb-16 text-align-left">
                     PAGES
                   </div>
@@ -181,13 +196,7 @@ function Footer() {
                     href="https://espace-template.webflow.io/404"
                   />
                 </div>
-                <div
-                  id="w-node-_08260f79-f788-2642-9d5b-b3298aa82dde-8aa82d9c"
-                  className="footer-column-wrapper"
-                  style={{
-                    gridArea: "1 / 11 / 2 / 13",
-                  }}
-                >
+                <div className="footer-column-wrapper">
                   <a
                     className="footer-link"
                     href="https://www.neo-studio.co.uk/template-info/styleguide"

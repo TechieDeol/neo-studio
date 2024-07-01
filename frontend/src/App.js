@@ -4,7 +4,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import "./App.css";
 
 const theme = createTheme({
   palette: {
