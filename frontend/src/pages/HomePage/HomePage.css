@@ -125,6 +125,49 @@
     height: 80%;
 }
 
+.animated-button {
+    grid-column-gap: 64px;
+    justify-content: flex-start;
+    align-self: flex-start;
+    align-items: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button-text {
+    z-index: 1;
+    color: var(--white-color);
+    font-size: 2rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.button-arrow-hover {
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: none;
+    position: absolute;
+}
+
+.button-arrow {
+    width: 40px;
+    height: 40px;
+}
+
+.button-background {
+    z-index: -1;
+    background-color: var(--magenta);
+    width: 0%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+
 @media screen and (max-width: 991px) {
 
     .cta-wrapper {

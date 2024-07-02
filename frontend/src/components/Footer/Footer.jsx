@@ -10,12 +10,13 @@ function Footer() {
   const handleSubscribe = async (e) => {
     e.preventDefault();
     try {
-      await subscribe(email);
-      setSuccessMessage("Thank you for subscribing!");
-      setErrorMessage("");
+      const response = await subscribe(email);
+      setSuccessMessage(response.message);
     } catch (error) {
-      setErrorMessage("Oops! Something went wrong while submitting the form.");
-      setSuccessMessage("");
+      setErrorMessage(
+        error.response?.message ||
+          "Oops! Something went wrong while submitting the form."
+      );
     }
   };
 
@@ -33,51 +34,57 @@ function Footer() {
                     </div>
                   </div>
                   <div className="subscribe-form-block">
-                    <form
-                      name="subscriptionForm"
-                      aria-label="Subscription Form"
-                      method="get"
-                      onSubmit={handleSubscribe}
-                    >
-                      <div className="form-wrapper">
-                        <input
-                          className="subscribe-field"
-                          name="subscriptionEmail"
-                          type="email"
-                          maxLength="256"
-                          required
-                          placeholder="Your email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <input
-                          className="subscription-button"
-                          type="submit"
-                          defaultValue="Go"
-                        />
+                    {successMessage == "" && (
+                      <form
+                        name="subscriptionForm"
+                        aria-label="Subscription Form"
+                        method="get"
+                        onSubmit={handleSubscribe}
+                      >
+                        <div className="form-wrapper">
+                          <input
+                            className="subscribe-field"
+                            name="subscriptionEmail"
+                            type="email"
+                            maxLength="256"
+                            required
+                            placeholder="Your email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                          />
+                          <input
+                            className="subscription-button"
+                            type="submit"
+                            defaultValue="Go"
+                          />
+                        </div>
+                      </form>
+                    )}
+                    {successMessage && (
+                      <div
+                        className="success-message"
+                        aria-label="Subscription Form success"
+                        role="region"
+                        tabIndex="-1"
+                      >
+                        <div className="text-medium">{successMessage}</div>
                       </div>
-                    </form>
-                    <div
-                      className="success-message"
-                      aria-label="Subscription Form success"
-                      role="region"
-                      tabIndex="-1"
-                    >
-                      <div className="text-medium">{successMessage}</div>
-                    </div>
-                    <div
-                      className="error-message"
-                      aria-label="Subscription Form failure"
-                      role="region"
-                      tabIndex="-1"
-                    >
-                      <div className="text-small">{errorMessage}</div>
-                    </div>
+                    )}
+                    {errorMessage && (
+                      <div
+                        className="error-message"
+                        aria-label="Subscription Form failure"
+                        role="region"
+                        tabIndex="-1"
+                      >
+                        <div className="text-small">{errorMessage}</div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
               <div className="_12-column-grid">
-                <div className="footer-column-wrapper">
+                <div className="footer-column-wrapper footer-column-1">
                   <a
                     className="footer-contact-link mb-16"
                     href="https://www.google.com/maps/place/Prague,+Czechia/@50.0597507,14.3832244,12z/data=!3m1!4b1!4m6!3m5!1s0x470b939c0970798b:0x400af0f66164090!8m2!3d50.0755381!4d14.4378005!16zL20vMDV5d2c?entry=ttu"
@@ -149,7 +156,7 @@ function Footer() {
                     </a>
                   </div>
                 </div>
-                <div className="footer-column-wrapper">
+                <div className="footer-column-wrapper footer-column-2">
                   <div className="text-small bold mb-16 text-align-left">
                     PAGES
                   </div>
@@ -196,7 +203,7 @@ function Footer() {
                     href="https://espace-template.webflow.io/404"
                   />
                 </div>
-                <div className="footer-column-wrapper">
+                <div className="footer-column-wrapper footer-column-3">
                   <a
                     className="footer-link"
                     href="https://www.neo-studio.co.uk/template-info/styleguide"
