@@ -243,6 +243,10 @@ sup {
   .text-small.uppercase {
     text-align: left;
   }
+
+  .text-huge {
+    font-size: 6vw;
+}
 }
 
 @media screen and (max-width: 767px) {
@@ -263,6 +267,11 @@ sup {
   .text-small.uppercase {
     font-size: .75rem;
   }
+
+  .text-huge {
+    font-size: 7vw;
+    line-height: .95;
+}
 }
 
 @media screen and (max-width: 479px) {
@@ -286,4 +295,14 @@ sup {
   .text-small.uppercase {
     text-align: left;
   }
+
+  .content-wrapper {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+}
+
+.text-huge {
+  font-size: 9vw;
+  line-height: 1;
+}
 }
